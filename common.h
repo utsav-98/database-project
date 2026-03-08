@@ -1,13 +1,10 @@
 #ifndef COMMON_H
 #define COMMON_H
 
+/* DEFINES */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
-
-#define true 1
-#define false 0
 
 // input Field Struct
 typedef struct {
@@ -16,15 +13,11 @@ typedef struct {
   ssize_t input_length;
 } inputBuffer;
 
-inputBuffer *init_inputBuffer(); /* Function to initialize input Field */
-void read_input(inputBuffer *new_input_field); /* Function to Read Input*/
-int isMetaCommand(
-    inputBuffer *new_input_field); /* Function to check if the command is meta
-                                      command  or not */
-int isExit(inputBuffer *new_input_field); /* Function to check if the entered
-                                             command is exit or not*/
+void AllocateInputBuffer(inputBuffer *new_input_field,
+                         size_t n); /* Allocates Input Buffer*/
 
-void setError(char *errorText);
-void AllocateInputBuffer(inputBuffer *new_input_field, size_t n);
+void setError(char *errorText); /* Prints Error and Exit*/
+
+inputBuffer *init_inputBuffer();
 
 #endif // !COMMON_H

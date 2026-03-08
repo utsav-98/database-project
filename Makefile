@@ -1,16 +1,21 @@
 # Variables
 CC      = gcc
-CFLAGS  = -Wall -Wextra -O2
+CFLAGS  = -Wall -Wextra -O2 -I.  # Include current directory for header files
 TARGET  = mydb
-SRC     = main.c
 PREFIX  = /usr/local
+
+# Source files
+SRC     = main.c \
+           common.c \
+           frontend/repl.c \
+           backend/virtualMachine.c
 
 # Default target
 all: $(TARGET)
 
 # Compile the executable
 $(TARGET): $(SRC)
-	$(CC) $(CFLAGS) -o $(TARGET) $(SRC)
+	$(CC) $(CFLAGS) -o $@ $^
 
 # Execute the program
 run: $(TARGET)
