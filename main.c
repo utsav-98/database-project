@@ -17,6 +17,7 @@ int main() {
         exit(EXIT_SUCCESS);
       } else {
         printf("unrecognized meta command '%s'.\n", new_input_buffer->input);
+        continue;
       }
     } else {
       //If Input has insert/Select keyword then pass
