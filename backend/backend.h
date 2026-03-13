@@ -2,6 +2,7 @@
 #ifndef BACKEND_H
 #define BACKEND_H
 #include "../common.h"
+#include "../frontend/frontend.h"
 
 #define true 1
 #define false 0
@@ -14,5 +15,7 @@ int isMetaCommand(
 
 int isExit(inputBuffer *new_input_field); /* Function to check if the entered
                                              command is exit or not*/
+
+void RunStatement(Statement* statement);
 
 #endif // !BACKEND_H

@@ -10,8 +10,8 @@ inputBuffer *init_inputBuffer() {
   return inputField;
 }
 
-void AllocateInputBuffer(inputBuffer *new_input_field, size_t n) {
-  new_input_field->buffer_length = n;
+void AllocateInputBuffer(inputBuffer *new_input_field, size_t Currentlength) {
+  new_input_field->buffer_length = Currentlength;
   new_input_field->input = malloc(new_input_field->buffer_length);
   if (!new_input_field->input) {
     setError("Memory allcation For Input Bufer  failed");

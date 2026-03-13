@@ -18,3 +18,15 @@ int isExit(inputBuffer *new_input_buffer) {
     return 0;
   }
 }
+
+//Run Statement
+void RunStatement(Statement* statement){
+  switch(statement->type){
+    case(STATEMENT_INSERT):
+      printf("Insert Command Run. \n");
+      break;
+    case(STATEMENT_SELECT): 
+      printf("SELECT Command Run. \n");
+      break;
+  }
+}
